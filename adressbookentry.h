@@ -14,6 +14,10 @@ class AdressBookEntry : public QWidget
 public:
     AdressBookEntry(QWidget *parent = nullptr);
     ~AdressBookEntry();
+public slots:
+    void save();
+private slots:
+    void markUnsavedChanges();
 
 private:
     Ui::AdressBookEntry *ui;
