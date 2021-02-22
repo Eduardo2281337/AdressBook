@@ -7,9 +7,17 @@ AdressBookEntry::AdressBookEntry(QWidget *parent)
 {
     ui->setupUi(this);
 
-    ui->pushButton->setText("Сохранить*");
+    ui->pushButton_save->setText("Сохранить*");
 
-    connect(ui->pushButton, &QPushButton::clicked, this, &AdressBookEntry::save);
+
+    connect(ui->lineEdit_secondName, &QLineEdit::textEdited, this, &AdressBookEntry::markUnsavedChanges);
+    connect(ui->lineEdit_firstName, &QLineEdit::textEdited, this, &AdressBookEntry::markUnsavedChanges);
+    connect(ui->lineEdit_thirdName, &QLineEdit::textEdited, this, &AdressBookEntry::markUnsavedChanges);
+    connect(ui->lineEdit_adress, &QLineEdit::textEdited, this, &AdressBookEntry::markUnsavedChanges);
+    connect(ui->lineEdit_homePhoneNumber, &QLineEdit::textEdited, this, &AdressBookEntry::markUnsavedChanges);
+    connect(ui->lineEdit_mobilePhoneNumber, &QLineEdit::textEdited, this, &AdressBookEntry::markUnsavedChanges);
+    connect(ui->plainTextEdit_other, &QLineEdit::textEdited, this, &AdressBookEntry::markUnsavedChanges);
+    connect(ui->pushButton_save, &QLineEdit::textEdited, this, &AdressBookEntry::markUnsavedChanges);
 }
 
 AdressBookEntry::~AdressBookEntry()
@@ -19,10 +27,10 @@ AdressBookEntry::~AdressBookEntry()
 
 void AdressBookEntry::save()
 {
-    ui->pushButton->setText("Сохранить");
+    ui->pushButton_save->setText("Сохранить");
 }
 
 void AdressBookEntry::markUnsavedChanges()
 {
-    ui->pushButton->setText("Сохранить*");
+    ui->pushButton_save->setText("Сохранить*");
 }

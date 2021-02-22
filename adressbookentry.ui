@@ -24,7 +24,7 @@
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
-     <layout class="QFormLayout" name="formLayout">
+     <layout class="QGridLayout" name="gridLayout">
       <item row="0" column="0">
        <widget class="QLabel" name="label_secondName">
         <property name="text">
@@ -93,7 +93,7 @@
        </widget>
       </item>
       <item row="6" column="1">
-       <widget class="QPlainTextEdit" name="plainTextEdit"/>
+       <widget class="QPlainTextEdit" name="plainTextEdit_other"/>
       </item>
      </layout>
     </item>
@@ -113,7 +113,7 @@
        </spacer>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton">
+       <widget class="QPushButton" name="pushButton_save">
         <property name="text">
          <string>Сохранить</string>
         </property>
